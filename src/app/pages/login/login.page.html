@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-radio-group>
+      <ion-item (click)="setPasscode(users.homeOwner, 'homeowner')">
+        <ion-label>Home Owner</ion-label>
+        <ion-radio slot="start" value="homeOwner"></ion-radio>
+      </ion-item>
+
+      <ion-item (click)="setPasscode(users.boardMember, 'boardmember')">
+        <ion-label>Board Member</ion-label>
+        <ion-radio slot="start" value="boardMember"></ion-radio>
+      </ion-item>
+
+      <ion-item (click)="setPasscode(users.manager, 'manager')">
+        <ion-label>Manager</ion-label>
+        <ion-radio slot="start" value="manager"></ion-radio>
+      </ion-item>
+
+      <ion-item (click)="setPasscode(users.contractor, 'contractor')">
+        <ion-label>Contractor</ion-label>
+        <ion-radio slot="start" value="contractor"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>

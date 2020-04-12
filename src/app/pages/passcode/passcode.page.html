@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Passcode</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="passcodeForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="stacked">Passcode <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" formControlName="passcode"></ion-input>
+    </ion-item>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!passcodeForm.valid">Login</ion-button>
+    </div>
+  </form>
+</ion-content>
