@@ -1,5 +1,7 @@
 {
   "name": "dlc-mapp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

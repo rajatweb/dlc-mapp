@@ -18,6 +18,7 @@ export class NoticePage implements OnInit {
 
   download(url, title) {
     this.pdf.download(url, title);
+    //https://dlc-admin.herokuapp.com/project/openFile/nade.pd
   }
 
   ngOnInit() {
