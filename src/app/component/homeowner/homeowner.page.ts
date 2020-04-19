@@ -12,6 +12,7 @@ export class HomeownerPage implements OnInit {
   schedule: null;
   team: null;
   punchList: null;
+  projectId;
   constructor(public activatedRoute: ActivatedRoute, public router: Router) { }
 
   ngOnInit() {
@@ -20,6 +21,7 @@ export class HomeownerPage implements OnInit {
       this.schedule = JSON.parse(res.userData).schedule;
       this.team = JSON.parse(res.userData).team;
       this.punchList = JSON.parse(res.userData).punchList;
+      this.projectId = res.projectId;
     });
   }
 
@@ -27,6 +29,32 @@ export class HomeownerPage implements OnInit {
     this.router.navigate(['/notice'], {
       queryParams: {
         notice: JSON.stringify(this.notice)
+      }
+    });
+  }
+
+  setProjectSchedule() {
+    this.router.navigate(['/project-schedule'], {
+      queryParams: {
+        schedule: JSON.stringify(this.schedule)
+      }
+    });
+  }
+
+  setProjectTeam() {
+    this.router.navigate(['/project-team-contact'], {
+      queryParams: {
+        team: JSON.stringify(this.team)
+      }
+    });
+  }
+
+  setPunchList() {
+    this.router.navigate(['/punchlist'], {
+      queryParams: {
+        userType: 'homeOwner',
+        projectId: this.projectId,
+        punchList: JSON.stringify(this.punchList)
       }
     });
   }

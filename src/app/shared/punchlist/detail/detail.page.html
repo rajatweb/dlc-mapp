@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Push List detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h3>Name: {{ item.name }}</h3>
+        <h3>Email: {{ item.email }}</h3>
+        <h3>Phone: {{ item.phone }}</h3>
+        <h3>Address: {{ item.address }}</h3>
+        <h3>Message: {{ item.message }}</h3>
+        <ul class="list">
+          <li class="item" *ngFor="let file of item.files;">
+            <img src="assets/pdf.jpg" alt="image" (click)="presentModal('', file.filename)" width="150">
+          </li>
+        </ul>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

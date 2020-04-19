@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Push List</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="punchListForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-textarea placeholder="Enter more information here..." formControlName="message"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <app-multi-file-upload></app-multi-file-upload>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Enter Full Name" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Enter Email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Enter Phone Number" formControlName="phone"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input formControlName="address"></ion-input>
+    </ion-item>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!punchListForm.valid">Submit
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Request Change</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="changeRequestForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-input placeholder="Enter Sheet Number" formControlName="sheetNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Enter Location Number" formControlName="locationNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea placeholder="Any other info" formControlName="message"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <app-multi-file-upload></app-multi-file-upload>
+    </ion-item>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!changeRequestForm.valid">Submit
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

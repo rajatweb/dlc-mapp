@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Board Member</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size="6">
+        <ion-card (click)="setNotice()">
+          <ion-card-content>
+            <ion-icon name="notifications-circle-outline"></ion-icon>
+            <br>
+            Notice
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setProjectWeeklyUpdate()">
+          <ion-card-content>
+            <ion-icon name="cloud-upload-outline">
+            </ion-icon>
+            <br>
+            Project Weekly Update
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setProjectMonthlyUpdate()">
+          <ion-card-content>
+            <ion-icon name="alarm"></ion-icon>
+            <br>
+            Project Monthly Budget
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setChangeOrder()">
+          <ion-card-content>
+            <ion-icon name="refresh-outline"></ion-icon>
+            <br>
+            Change Order
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setProjectSchedule()">
+          <ion-card-content>
+            <ion-icon name="calendar-outline"></ion-icon>
+            <br>
+            Project Schedule
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setProjectTeam()">
+          <ion-card-content>
+            <ion-icon name="call-outline"></ion-icon>
+            <br>
+            Project Team Contact
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-content>
+            <ion-icon name="list-circle-outline"></ion-icon>
+            <br>
+            Punch List
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

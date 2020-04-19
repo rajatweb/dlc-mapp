@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Project Photos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="projectPhotosForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-input placeholder="Enter Sheet Number" formControlName="sheetName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder="Enter Location Number" formControlName="locationNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Type</ion-label>
+      <ion-select placeholder="Select One" formControlName="photoType">
+        <ion-select-option value="before">Before</ion-select-option>
+        <ion-select-option value="inprogress">In-Progress</ion-select-option>
+        <ion-select-option value="complete">Completion</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <app-multi-file-upload></app-multi-file-upload>
+    </ion-item>
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" [disabled]="!projectPhotosForm.valid">Submit
+      </ion-button>
+    </div>
+  </form>
+</ion-content>

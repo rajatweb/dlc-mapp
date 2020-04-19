@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="requestChange()">
+        <ion-icon slot="icon-only" name="add-circle-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Request Change</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ng-container *ngIf="changeRequest.length > 0; else elseTemplate">
+      <ion-list>
+        <ion-item button *ngFor="let item of changeRequest; let i = index;">
+          <ion-label (click)="setDetail(item)">
+            <h3>Request for change  {{ i + 1 }} - {{ item.status ? 'Approved' : 'Waiting for approval'}}</h3>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <ion-text>No Change Request Found</ion-text>
+    </ng-template>
+  </ion-list>
+</ion-content>
+ 

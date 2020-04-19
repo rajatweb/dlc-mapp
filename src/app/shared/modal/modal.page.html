@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="danger" (click)="dismiss()">
+        <span ion-text color="primary" showWhen="ios"></span>
+        <ion-icon name="close-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ key }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <pdf-viewer [src]="'https://dlc-admin.herokuapp.com/v1/api/mapp/project/openFile/' + pdfName" [render-text]="true"
+    style="display: block;" [original-size]="true" [show-borders]="true" [fit-to-page]="true">
+  </pdf-viewer>
+</ion-content>

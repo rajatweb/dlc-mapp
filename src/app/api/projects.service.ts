@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class ProjectsService {
 
-  url = 'http://dlc-admin.herokuapp.com/v1/api/mapp/';
+  url = 'https://dlc-admin.herokuapp.com/v1/api/mapp';
 
   constructor(private http: HttpClient) { }
 
@@ -18,4 +18,15 @@ export class ProjectsService {
     );
   }
 
+  addPunchList(data) {
+    return this.http.post(`${this.url}/project/addPunchList`, data);
+  }
+
+  addChangeRequest(data) {
+    return this.http.post(`${this.url}/project/addChangeRequest`, data);
+  }
+
+  addProjectPhoto(data) {
+    return this.http.post(`${this.url}/project/addPhoto`, data);
+  }
 }

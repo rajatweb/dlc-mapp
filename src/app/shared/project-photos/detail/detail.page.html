@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Project Photos Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-label>
+        <img src="assets/pdf.jpg" alt="image" (click)="presentModal('', item.fileName)" width="150">
+        <h3>Project Sheet: {{ item.sheetName }}</h3>
+        <h3>Location Number: {{ item.locationNumber }}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

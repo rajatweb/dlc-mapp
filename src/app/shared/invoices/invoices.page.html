@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Invoices</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngFor="let item of invoices">
+
+    <h6>Invoice {{ item.invoiceNumber}} - 
+      <ion-chip color="success">
+        <ion-label>{{ item.statusName }}</ion-label>
+      </ion-chip>
+    </h6>
+    <h6>Date: {{ item.date | date: 'mediumDate'}}</h6>
+
+    <ion-progress-bar [value]="item.status" buffer="0.1"></ion-progress-bar>
+  </ion-list>
+
+</ion-content>

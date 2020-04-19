@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Contractor</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size="6">
+        <ion-card (click)="setInvoices()">
+          <ion-card-content>
+            <ion-icon name="card-outline"></ion-icon>
+            <br>
+            Invoices
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setSpecification()">
+          <ion-card-content>
+            <ion-icon name="clipboard-outline"></ion-icon>
+            <br>
+            Specification
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setAddendums()">
+          <ion-card-content>
+            <ion-icon name="receipt-outline"></ion-icon>
+            <br>
+            Specification
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setRfi()">
+          <ion-card-content>
+            <ion-icon name="medical-sharp"></ion-icon>
+            <br>
+            RFI's
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setChangeOrder()">
+          <ion-card-content>
+            <ion-icon name="refresh-outline"></ion-icon>
+            <br>
+            Change Order
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" (click)="setProjectPhoto()">
+        <ion-card>
+          <ion-card-content>
+            <ion-icon name="camera-sharp"></ion-icon>
+            <br>
+            Project Photo
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setAsBuilts()">
+          <ion-card-content>
+            <ion-icon name="pause-circle-sharp"></ion-icon>
+            <br>
+            As Builts
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card (click)="setRequestChange()">
+          <ion-card-content>
+            <ion-icon name="git-compare-outline"></ion-icon>
+            <br>
+            Request for Change
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="addPhotos()">
+        <ion-icon slot="icon-only" name="add-circle-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Project Photos</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list *ngIf="projectPhotos">
+      <ion-item button *ngFor="let item of projectPhotos | keyvalue; let i = index;">
+        <ion-label (click)="setDetail(item)">
+          <h3>{{ item.key | titlecase }} Photos</h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>

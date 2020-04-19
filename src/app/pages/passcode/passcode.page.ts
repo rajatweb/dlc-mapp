@@ -12,6 +12,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class PasscodePage implements OnInit {
   user;
   userRole;
+  projectId;
   passcodeForm: FormGroup;
   constructor(public activatedRoute: ActivatedRoute, public router: Router) { }
 
@@ -19,6 +20,7 @@ export class PasscodePage implements OnInit {
     this.activatedRoute.queryParams.subscribe((res) => {
       this.user = JSON.parse(res.user);
       this.userRole = res.role;
+      this.projectId = res.projectId;
     });
     this.passcodeForm = new FormGroup({
       passcode: new FormControl('', Validators.required)
@@ -30,7 +32,8 @@ export class PasscodePage implements OnInit {
     if (this.passcodeForm.value.passcode === this.user.passcode) {
       this.router.navigate([this.userRole], {
         queryParams: {
-          userData: JSON.stringify(this.user)
+          userData: JSON.stringify(this.user),
+          projectId: this.projectId
         }
       });
     }

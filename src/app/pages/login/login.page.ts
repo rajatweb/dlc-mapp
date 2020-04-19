@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
   users;
+  projectId;
   constructor(public activatedRoute: ActivatedRoute, public router: Router) { }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe((res) => {
       if (Object.keys(res).length > 0) {
+        this.projectId = res.projectId;
         this.users = JSON.parse(res.userRole);
       } else {
         this.router.navigate(['/home']);
@@ -26,7 +28,8 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/passcode'], {
       queryParams: {
         user: JSON.stringify(user),
-        role
+        role,
+        projectId: this.projectId
       }
     });
   }

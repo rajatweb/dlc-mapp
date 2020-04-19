@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Request Change detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h3>Sheet Number: {{ item.sheetNumber }}</h3>
+        <h3>Location Number: {{ item.loactionNumber }}</h3>
+        <h3>Message: {{ item.message }}</h3>
+        <ul class="list">
+          <li class="item" *ngFor="let file of item.files;">
+            <img src="assets/pdf.jpg" alt="image" (click)="presentModal('', file.filename)" width="150">
+          </li>
+        </ul>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

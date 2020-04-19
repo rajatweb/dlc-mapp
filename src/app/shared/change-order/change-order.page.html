@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Change Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size="6" *ngFor="let item of changeOrder">
+        <img src="assets/pdf.jpg" alt="your image" (click)="presentModal('', item.fileName)" width="150">
+
+        <ion-label><small> Change Order {{ item.changeNumber }}</small></ion-label> <br />
+        <ion-label><small>Date: {{ item.date | date: 'mediumDate' }}</small></ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

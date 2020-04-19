@@ -17,9 +17,10 @@ export class HomePage implements OnInit {
     this.projects = this.projectService.getProjects();
   }
 
-  setLogin(role) {
+  setLogin(_id, role) {
     this.router.navigate(['/login'], {
       queryParams: {
+        projectId: _id,
         userRole: JSON.stringify(role)
       }
     });
